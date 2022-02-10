@@ -30,7 +30,8 @@ export class AppComponent {
         this.themeSidebar = { background: "#ff7f00ff", color: "white" };
         this.themeHeader = { background: "white", color: "gray" };
         this.arrMenuOptions = [
-            { id: 0, title: "Início", icon: 'home', route: "home" }, // example component to navigate
+            { id: 0, title: "Início", icon: 'home', route: "home" },
+            { id: 1, title: "Sobre", icon: 'info', route: "sobre" },
         ];
         this.heightLogo = '50px';
         this.srcLogo = "assets/imagens/moto-logo2.png";
