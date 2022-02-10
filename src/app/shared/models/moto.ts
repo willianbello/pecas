@@ -1,8 +1,11 @@
-import { Peca } from "./peca";
+import { IModelo, Modelo } from "./modelo";
 
-export class Moto {
+export interface IMoto {
     fabricante: string;
-    modelo: string;
-    ano: number;
-    pecas: Array<Peca> = new Array<Peca>();
+    modelos: IModelo[];
+}
+
+export class Moto implements IMoto {
+    fabricante: string;
+    modelos: Modelo[] = [];
 }

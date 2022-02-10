@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlDataBase: 'assets/data/database.json',
 };

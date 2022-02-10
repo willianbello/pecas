@@ -1,0 +1,94 @@
+[
+    {
+        "fabricante": "Garinni",
+        "modelos": [
+            {
+                "nome": "GR250 T3",
+                "anos": [
+                    {
+                        "ano": "2009",
+                        "pecas": [
+                            {
+                                "nome": "Pastilha Freio Traseiro",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Yamaha",
+                                        "modelo": "Twister",
+                                        "descricao": null,
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Pastilha Freio Dianteiro",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Yamaha",
+                                        "modelo": "YBR 150",
+                                        "descricao": null,
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Filtro de Óleo",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Qualquer",
+                                        "modelo": "125",
+                                        "descricao": null,
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Bateria",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Honda",
+                                        "modelo": "CB 400",
+                                        "descricao": null,
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Pneu Dianteiro",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Harley",
+                                        "modelo": "883",
+                                        "descricao": "até 130",
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Pneu Traseiro",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Harley",
+                                        "modelo": "883",
+                                        "descricao": "até 150 aro 16",
+                                        "ano": null
+                                    }
+                                ]
+                            },
+                            {
+                                "nome": "Velas de ignição",
+                                "alternativas": [
+                                    {
+                                        "fabricante": "Honda",
+                                        "modelo": "CG 125",
+                                        "descricao": null,
+                                        "ano": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

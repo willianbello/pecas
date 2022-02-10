@@ -1,1 +1,81 @@
-<p>home works!</p>
+<div class="container">
+    <h5>Filtros de Busca</h5>
+    <form class="row" [formGroup]="filtroFormGroup">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Fabricante</mat-label>
+                <mat-select formControlName="fabricante">
+                    <mat-option *ngFor="let moto of motos" [value]="moto.fabricante" (onSelectionChange)="onSelectMoto(moto)">
+                        {{ moto.fabricante }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="filtroFormGroup.controls.fabricante?.errors?.required">Selecione um Fabricante</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Modelo</mat-label>
+                <mat-select formControlName="modelo">
+                    <mat-option *ngFor="let modelo of motoSelecionada?.modelos" [value]="modelo.nome" (onSelectionChange)="onSelectModelo(modelo)">
+                        {{ modelo.nome }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="filtroFormGroup.controls.fabricante?.errors?.required">Selecione um Fabricante</mat-error>
+                <mat-error *ngIf="!filtroFormGroup.controls.fabricante?.errors?.required && filtroFormGroup.controls.modelo?.errors?.required">
+                    Selecione um Modelo
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Ano</mat-label>
+                <mat-select formControlName="ano">
+                    <mat-option *ngFor="let ano of modeloSelecionado?.anos" [value]="ano.ano" (onSelectionChange)="onSelectAno(ano)">
+                        {{ ano.ano }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="filtroFormGroup.controls.ano?.errors?.required">Selecione um Ano</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-12">
+            <button mat-raised-button (click)="limparFiltros()">Limpar Filtros</button>
+        </div>
+    </form>
+
+    <div class="row mt-4 bg-card" *ngIf="anoSelecionado">
+        <div class="col-md-12">
+            <mat-card class="mat-elevation-z8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>Fabricante: {{ motoSelecionada?.fabricante }}</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <h6>Modelo: {{ modeloSelecionado?.nome }}</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <h6>Peças:</h6>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <div class="row container-peca mb-2" *ngFor="let peca of anoSelecionado.pecas">
+                            <div class="col-md-6 d-flex align-items-center">
+                                <p class="font-weight-bold mb-0">
+                                    <b>{{ peca.nome }}</b>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-0">
+                                    Alternativas:
+                                </p>
+                                <ul>
+                                    <li *ngFor="let alternativa of peca.alternativas" class="text-cinza">
+                                        {{ alternativa.fabricante }} {{ alternativa.modelo }} {{ alternativa.ano }} <span *ngIf="alternativa.descricao">({{ alternativa?.descricao }})</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
